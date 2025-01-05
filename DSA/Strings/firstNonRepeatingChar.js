@@ -1,5 +1,3 @@
-let str = "abcdcba";
-
 function firstNonRepeating(str) {
   /* Brute force: TC O(n^2) | SC O(1)
   for (let i = 0; i < str.length; i++) {
@@ -34,4 +32,5 @@ function firstNonRepeating(str) {
   return null; // means all are repeating
 }
 
+let str = "abcdcba";
 console.log(firstNonRepeating(str));
