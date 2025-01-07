@@ -36,7 +36,4 @@ function solve(str) {
 
 let str = "absdanrdm";
 console.log(solve(str));
-l = 0, r = 0, maxL = 0;
-while(r < str.length){
-  
-}
+
