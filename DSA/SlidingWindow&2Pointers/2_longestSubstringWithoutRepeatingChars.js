@@ -34,6 +34,6 @@ function solve(str) {
   return maxLen;
 }
 
-let str = "absdanrdm";
+let str = "cadbzabcd";
 console.log(solve(str));
 
