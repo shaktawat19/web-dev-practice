@@ -58,6 +58,7 @@ For Shooting game, Browser resizing and Scrolling feeds, It’s recommended to u
       const throttle = function (callback, interval) {
         let isAvailable = true;
         return function () {
+          // value of this in a function depends on how the function is called, not where it is defined
           const context = this;
           const args = arguments;
           if (isAvailable) {

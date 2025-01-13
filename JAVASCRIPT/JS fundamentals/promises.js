@@ -7,6 +7,7 @@
 //   console.log("finallly..");
 // })
 // .then(res => {
+//   console.log("last then value:");
 //   console.log(res);
 // })
 
@@ -38,14 +39,6 @@
 // promise1.then( res => {
 //     console.log(res);
 // });
-// console.log("end");
-
-// console.log("start");
-// const promise1 = new Promise((resolve, reject) => {
-//     console.log(1);
-//     console.log(3);
-// })
-// promise1.then(res => console.log(res));
 // console.log("end");
 
 // console.log("start");
@@ -147,7 +140,7 @@
 //     console.log(`${err}, ...`);
 //   })
 //   .then((data) => {
-//     console.log("vhgjgh", data);
+//     console.log("last then:", data);
 //   });
 
 // const firstPromise = new Promise((res, rej) => {
@@ -163,82 +156,70 @@
 //   });
 
 // function looper() {
-//     for (var i = 0; i < 5; i++) {
-//         (function (j) {
-//             setTimeout(() => {
-//                 console.log(j);
-//             }, 1000)
-//         })(i)
-//     }
+//   console.log("fn ran");
+//   for (var i = 0; i < 5; i++) {
+//     (function (j) {
+//       setTimeout(() => {
+//         console.log(j);
+//       }, 1000);
+//     })(i);
+//   }
 // }
 // looper();
 
-// console.log("before promise start");
-// const promise3 = new Promise((resolve, reject) => {
-//   console.log("Inside promise");
-//   setTimeout(() => {
-//     reject("promise reject error");
-//   }, 0);
-// });
-// console.log("after promise");
-// console.log("promise3:", promise3);
-// promise3.then((data) => console.log(data)).catch((err) => console.log(err));
-// console.log("after promise ends");
-
 // Q2
-function one() {
-  const promise1 = new Promise((res, rej) => {
-    setTimeout(() => {
-      res(1);
-    }, 1000);
-  });
-  return promise1;
-}
-function two() {
-  const promise2 = new Promise((res, rej) => {
-    setTimeout(() => {
-      res(2);
-    }, 1000);
-  });
-  return promise2;
-}
-function three() {
-  const promise3 = new Promise((res, rej) => {
-    setTimeout(() => {
-      rej(3);
-    }, 2000);
-  });
-  return promise3;
-}
-async function test() {
-  try {
-    // as soon as we get frst err, catch block will execute.
-    // const resp1 = await one();
-    // const resp2 = await two();
-    // const resp3 = await three();
-    // console.log("response: " + (resp1 + resp2 + resp3));
-    // console.log(typeof resp1);
+// function one() {
+//   const promise1 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//       res(1);
+//     }, 1000);
+//   });
+//   return promise1;
+// }
+// function two() {
+//   const promise2 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//       res(2);
+//     }, 1000);
+//   });
+//   return promise2;
+// }
+// function three() {
+//   const promise3 = new Promise((res, rej) => {
+//     setTimeout(() => {
+//       rej(3);
+//     }, 2000);
+//   });
+//   return promise3;
+// }
+// async function test() {
+//   try {
+//     // as soon as we get frst err, catch block will execute.
+//     // const resp1 = await one();
+//     // const resp2 = await two();
+//     // const resp3 = await three();
+//     // console.log("response: " + (resp1 + resp2 + resp3));
+//     // console.log(typeof resp1);
 
-    const output = await Promise.allSettled([one(), two(), three()]);
-    console.log("output: ", output);
-  } catch (err) {
-    console.log("error: ", err);
-  } finally {
-    console.log("finally");
-  }
-}
+//     const output = await Promise.allSettled([one(), two(), three()]);
+//     console.log("output: ", output);
+//   } catch (err) {
+//     console.log("error: ", err);
+//   } finally {
+//     console.log("finally");
+//   }
+// }
 // test();
 
-// Q3
-async function getUserData() {
-  // promise chaining is done here.
-  console.log("inner");
-  let response1 = await fetch("https://jsonplaceholder.typicode.com/users");
-  let response2 = await fetch("https://jsonplaceholder.typicode.com/users");
-  let response3 = await fetch("https://jsonplaceholder.typicode.com/users");
-  console.log(response1);
-  
-  console.log("After all promise is executed");
-}
-getUserData();
-console.log("Hello World");
+// Q3 : promise chaining is done here.
+// async function getUserData() {
+//   console.log("inner");
+//   let response1 = await fetch("https://jsonplaceholder.typicode.com/users");
+//   let response2 = await fetch("https://jsonplaceholder.typicode.com/users");
+//   let response3 = await fetch("https://jsonplaceholder.typicode.com/users");
+//   console.log(response1);
+
+//   console.log("After all promise is executed");
+// }
+// getUserData();
+// console.log("Hello World");
