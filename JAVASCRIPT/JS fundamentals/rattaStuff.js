@@ -54,8 +54,3 @@ console.log(obj.e());
 
 
 
-// postgresql://neondb_owner:qeyDfmN3xYU6@ep-empty-recipe-a71b2y8r.ap-southeast-2.aws.neon.tech/neondb?sslmode=require
-
-
-
-
