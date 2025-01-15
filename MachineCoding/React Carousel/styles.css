@@ -1,0 +1,36 @@
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+}
+
+img {
+  height: 400px;
+  width: 100%;
+  display: none;
+}
+
+.left-btn,
+.right-btn {
+  position: absolute;
+  background-color: red;
+  color: #fff;
+  padding: 0.5rem;
+  top: 50%;
+  cursor: pointer;
+}
+
+.left-btn {
+  left: 1rem;
+}
+.right-btn {
+  right: 1rem;
+}
+
+img.active {
+  display: block;
+}
