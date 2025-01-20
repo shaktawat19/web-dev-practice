@@ -1,0 +1,8 @@
+.otp-container {
+    input {
+      height: 50px;
+      width: 50px;
+      margin: 2px;
+      font-size: 1rem;
+    }
+  }
