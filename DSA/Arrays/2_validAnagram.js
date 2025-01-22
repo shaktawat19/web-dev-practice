@@ -1,5 +1,5 @@
-let str1 = "haash";
-let str2 = "ahshs";
+let str1 = "harsh";
+let str2 = "harhs";
 
 function isValidAnagram(s1, s2) {
   // Brute-force:
@@ -17,9 +17,9 @@ function isValidAnagram(s1, s2) {
 
   for (let j = 0; j < s2.length; j++) {
     if (myMap.has(s2[j])) {
-      myMap.get(s1[j]) === 1
-        ? myMap.delete(s1[j])
-        : myMap.set(s1[j], myMap.get(s1[j]) - 1);
+      myMap.get(s2[j]) === 1
+        ? myMap.delete(s2[j])
+        : myMap.set(s2[j], myMap.get(s2[j]) - 1);
     } else return false;
   }
 
