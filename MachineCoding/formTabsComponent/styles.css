@@ -1,0 +1,26 @@
+.App {
+    font-family: sans-serif;
+  }
+  .tabs-container {
+    display: flex;
+  }
+  .tab {
+    border: 1px solid #000;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  .active-tab {
+    background-color: coral;
+  }
+  .component-container {
+    border: 1px solid black;
+    height: 250px;
+    width: 400px;
+    padding: 10px;
+  }
+  .error {
+    display: block;
+    font-size: small;
+    color: red;
+  }
+  
