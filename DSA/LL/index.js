@@ -68,7 +68,7 @@ class LinkedList {
     }
 
     let temp = this.head;
-    while (i > 1) {
+    while (i > 0) {
       temp = temp.next;
       i--;
     }
