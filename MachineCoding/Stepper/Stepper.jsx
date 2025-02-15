@@ -17,16 +17,14 @@ export default Stepper = ({ steps }) => {
             return (
               <div key={idx} className={"stepper"}>
                 <div
-                  className={`stepper-number ${
-                    idx <= currentStep ? "active" : ""
-                  }`}
+                  className={`stepper-number ${idx <= currentStep ? "active" : ""
+                    }`}
                 >
                   {idx + 1}
                   {idx !== steps.length - 1 && (
                     <div
-                      className={`stepper-line  ${
-                        idx < currentStep ? "active" : ""
-                      }`}
+                      className={`stepper-line  ${idx < currentStep ? "active" : ""
+                        }`}
                     ></div>
                   )}
                 </div>
@@ -38,11 +36,9 @@ export default Stepper = ({ steps }) => {
         </div>
         <div className="stepper-content">{steps[currentStep].content}</div>
         <div className="btn-container">
-          {currentStep !== 0 && (
-            <button className="back" onClick={handleBack}>
-              Back
-            </button>
-          )}
+          <button className="back" onClick={handleBack} disabled={currentStep === 0}>
+            Back
+          </button>
           {currentStep !== steps.length - 1 && (
             <button className="continue" onClick={handleContinue}>
               Continue
