@@ -19,7 +19,7 @@ export default function App() {
 
   const noOfPages = Math.ceil(products.length / PAGE_SIZE);
   let paginationArr = Array.from({ length: noOfPages }, (_, idx) => idx + 1);
-  let start = currentPage;
+  const start = (currentPage - 1) * PAGE_SIZE;
   let end = start + PAGE_SIZE;
 
   return (
