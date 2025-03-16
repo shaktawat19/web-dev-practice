@@ -1,23 +1,23 @@
-import { useContext, useState } from "react";
-import { FileExplorerContext } from "../context/FileExplorerContext";
-import Input from "./Input";
+import { useContext, useState } from 'react'
+import { FileExplorerContext } from '../context/FileExplorerContext'
+import Input from './Input'
 
 export default function FileExplorer({ id = 1 }) {
-  const [showChildren, setShowChildren] = useState(false);
-  const [showAddInput, setShowAddInput] = useState(false);
-  const [showEditInput, setShowEditInput] = useState(false);
+  const [showChildren, setShowChildren] = useState(false)
+  const [showAddInput, setShowAddInput] = useState(false)
+  const [showEditInput, setShowEditInput] = useState(false)
   const { nodes, deleteNode, addNode, editNode } =
-    useContext(FileExplorerContext);
+    useContext(FileExplorerContext)
 
   const handleClick = () => {
-    setShowChildren(!showChildren);
-  };
+    setShowChildren(!showChildren)
+  }
 
-  console.log(nodes);
+  console.log(nodes)
   return (
-    <div className="container">
+    <div className='container'>
       <h5>
-        {nodes[id].type === "folder" ? (showChildren ? "📂" : "📁") : "📄"}
+        {nodes[id].type === 'folder' ? (showChildren ? '📂' : '📁') : '📄'}
 
         {showEditInput ? (
           <Input
@@ -28,13 +28,31 @@ export default function FileExplorer({ id = 1 }) {
           />
         ) : (
           <>
-            <span onClick={handleClick}>{nodes[id].name}</span>
+            <span
+              onClick={handleClick}
+              role='button'
+              aria-expanded={showChildren}
+            >
+              {nodes[id].name}
+            </span>
 
-            {nodes[id].type === "folder" && (
+            {nodes[id].type === 'folder' && (
               <span onClick={() => setShowAddInput(true)}>➕</span>
             )}
-            <span onClick={() => setShowEditInput(true)}>🖊️</span>
-            <span onClick={() => deleteNode(id)}>❌</span>
+            <button
+              aria-label='Edit node' // Provide an accessible label
+              onClick={() => setShowEditInput(true)}
+            >
+              🖊️
+            </button>
+            <span
+              tabIndex='0'
+              role='button'
+              aria-label='Delete node'
+              onClick={() => deleteNode(id)}
+            >
+              ❌
+            </span>
           </>
         )}
       </h5>
@@ -49,8 +67,8 @@ export default function FileExplorer({ id = 1 }) {
       </>
       {showChildren &&
         nodes[id]?.children?.map((childId, index) => {
-          return <FileExplorer key={index} id={childId} />;
+          return <FileExplorer key={index} id={childId} />
         })}
     </div>
-  );
+  )
 }
